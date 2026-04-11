@@ -5,55 +5,61 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="Digital Banking" Height="550" Width="800">
+        Title="Digital Banking" Height="450" Width="800">
     <Border Padding="5">
-        <StackPanel>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
             <!--Buttons-->
-            <Grid HorizontalAlignment="Left">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
-
-                <Button x:Name="CreateAccountButton" Click="CreateAccountButton_Click" Grid.Column="0" Content="Create Account" Padding="2" Margin="5 0 20 0"/>
-                <Button x:Name="DeleteAccountButton" Click="DeleteAccountButton_Click" Grid.Column="1" Content="Delete Account" Padding="2"/>
-                <Button x:Name="EditAccountButton" Click="EditAccountButton_Click" Grid.Column="2" Content="Edit Account" Padding="2" Margin="20 0 0 0"/>
-                <Button x:Name="ClearAccountsButton" Click="ClearAccountsButton_Click" Grid.Column="3" Content="Clear Accounts" Padding="2" Margin="20 0 0 0"/>
-                <Button x:Name="ExportDataButton" Click="ExportDataButton_Click" Grid.Column="4" Content="Export Data" Padding="2" Margin="20 0 20 0"/>
-
-            </Grid>
-
-            <Canvas>
-                <!--Horizontal Line-->
-                <Line X1="5" Y1="10" X2="770" Y2="10" Stroke="Black" StrokeThickness="1" />
-                <Line X1="206" Y1="11" X2="206" Y2="480" Stroke="LightGray" StrokeThickness="5"/>
-            </Canvas>
+            <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="0">
+                <Button x:Name="CreateAccountButton" Click="CreateAccountButton_Click" Content="Create Account" Margin="5"/>
+                <Button x:Name="DeleteAccountButton" Click="DeleteAccountButton_Click" Content="Delete Account" Margin="5"/>
+                <Button x:Name="EditAccountButton" Click="EditAccountButton_Click" Content="Edit Account" Margin="5"/>
+                <Button x:Name="ClearAccountsButton" Click="ClearAccountsButton_Click" Content="Clear Accounts" Margin="5"/>
+                <Button x:Name="ExportDataButton" Click="ExportDataButton_Click" Content="Export Data" Margin="5"/>
+            </StackPanel>
+            
+            <!--Line-->
+            <Separator Grid.Row="1" Margin="5" Background="Black" Height="1"/>
 
             <!--TreeView-->
-            <TreeView Name="BankTreeViewEvent" Margin="0 15 0 0" HorizontalAlignment="Left" Width="200" Height="462">
-                <TreeViewItem Header="Bank Accounts">
-                    <TreeViewItem Header="Saving Accounts">
-                        <TreeViewItem Header="Account 1"/>
-                        <TreeViewItem Header="Account 2"/>
-                        <TreeViewItem Header="Account 3"/>
-                    </TreeViewItem>
-                    <TreeViewItem Header="Trading Accounts">
-                        <TreeViewItem Header="Trad Account 1"/>
-                        <TreeViewItem Header="Trad Account 2"/>
-                    </TreeViewItem>
-                    <TreeViewItem Header="Salary Accounts">
-                        <TreeViewItem Header="Salary Account 1"/>
-                    </TreeViewItem>
-                </TreeViewItem>
-                <TreeViewItem Header="Bank Statistics">
-                    <TreeViewItem Header="Money Holdings"/>
-                    <TreeViewItem Header="Accounts"/>
-                </TreeViewItem>
-            </TreeView>
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
 
-        </StackPanel>
+                <Border Grid.Column="0" BorderBrush="Gray">
+                    <TreeView>
+                        <TreeViewItem Header="Bank Accounts">
+                            <TreeViewItem Header="Saving Accounts">
+                                <TreeViewItem Header="Account 1"/>
+                                <TreeViewItem Header="Account 2"/>
+                                <TreeViewItem Header="Account 3"/>
+                            </TreeViewItem>
+
+                            <TreeViewItem Header="Trading Accounts">
+                                <TreeViewItem Header="Trad Account 1"/>
+                                <TreeViewItem Header="Trad Account 2"/>
+                            </TreeViewItem>
+
+                            <TreeViewItem Header="Salary Accounts">
+                                <TreeViewItem Header="Salary Account 1"/>
+                            </TreeViewItem>
+                        </TreeViewItem>
+
+                        <TreeViewItem Header="Bank Statistics">
+                            <TreeViewItem Header="Money Holdings"/>
+                            <TreeViewItem Header="Accounts"/>
+                        </TreeViewItem>
+                    </TreeView>
+                </Border>
+            </Grid>
+
+        </Grid>
     </Border>
 </Window>
