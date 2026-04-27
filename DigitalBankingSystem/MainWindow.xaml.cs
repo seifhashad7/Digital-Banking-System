@@ -33,7 +33,7 @@ namespace DigitalBankingSystem
 
         private void CreateAccountButton_Click(object sender, RoutedEventArgs e)
         {
-
+            DisplayArea.Content = new CreateAcc_UC();
         }
 
         private void EditAccountButton_Click(object sender, RoutedEventArgs e)

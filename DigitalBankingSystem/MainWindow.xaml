@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DigitalBankingSystem"
         mc:Ignorable="d"
-        Title="Digital Banking" Height="450" Width="800">
+        Title="Digital Banking" Height="500" Width="800">
     <Border Padding="5">
         <Grid>
             <Grid.RowDefinitions>
@@ -15,13 +15,13 @@
             </Grid.RowDefinitions>
 
             <!--Buttons-->
-            <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="0">
+            <WrapPanel Orientation="Horizontal" Grid.Row="0">
                 <Button x:Name="CreateAccountButton" Click="CreateAccountButton_Click" Content="Create Account" Margin="5"/>
                 <Button x:Name="DeleteAccountButton" Click="DeleteAccountButton_Click" Content="Delete Account" Margin="5"/>
                 <Button x:Name="EditAccountButton" Click="EditAccountButton_Click" Content="Edit Account" Margin="5"/>
                 <Button x:Name="ClearAccountsButton" Click="ClearAccountsButton_Click" Content="Clear Accounts" Margin="5"/>
                 <Button x:Name="ExportDataButton" Click="ExportDataButton_Click" Content="Export Data" Margin="5"/>
-            </StackPanel>
+            </WrapPanel>
             
             <!--Line-->
             <Separator Grid.Row="1" Margin="5" Background="Black" Height="1"/>
@@ -58,6 +58,8 @@
                         </TreeViewItem>
                     </TreeView>
                 </Border>
+
+                <ContentControl Name="DisplayArea" Grid.Column="1"></ContentControl>
             </Grid>
 
         </Grid>
