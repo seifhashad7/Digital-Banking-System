@@ -8,20 +8,20 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <StackPanel Background="White">
         <Label FontSize="15" FontWeight="Bold" Margin="5 0 0 0" FontFamily="Calibri">Please Enter your Full Name:</Label>
-        <TextBox x:Name="userNameTB" Height="20" Width="300" HorizontalAlignment="Left" Margin="10 0 0 0"></TextBox>
+        <TextBox x:Name="userNameTB" Height="20" Width="300" HorizontalAlignment="Left" Margin="10 0 0 0" TextChanged="userNameTB_TextChanged"></TextBox>
         <Label FontSize="15" FontWeight="Bold" Margin="5 5 0 0" FontFamily="Calibri">Please Enter your Age:</Label>
-        <TextBox x:Name="userAgeTB" Height="20" Width="50" HorizontalAlignment="Left" Margin="10 0 0 0"></TextBox>
+        <TextBox x:Name="userAgeTB" Height="20" Width="50" HorizontalAlignment="Left" Margin="10 0 0 0" TextChanged="userAgeTB_TextChanged"></TextBox>
         <Label FontSize="15" FontWeight="Bold" Margin="5 5 0 0" FontFamily="Calibri">Please Enter your National ID:</Label>
-        <TextBox x:Name="userNationalIdTB" Height="20" Width="200" HorizontalAlignment="Left" Margin="10 0 0 0"></TextBox>
-        <Label FontSize="15" FontWeight="Bold" Margin="5 5 0 0" FontFamily="Calibri">Please Enter your Company Name:</Label>
-        <TextBox x:Name="userCompanyNameTB" Height="20" Width="200" HorizontalAlignment="Left" Margin="10 0 0 0"></TextBox>
+        <TextBox x:Name="userNationalIdTB" Height="20" Width="200" HorizontalAlignment="Left" Margin="10 0 0 0" TextChanged="userNationalIdTB_TextChanged"></TextBox>
+        <Label FontSize="15" FontWeight="Bold" Margin="5 5 0 0" FontFamily="Calibri">Please Enter your Phone Number:</Label>
+        <TextBox x:Name="userPhoneNumberTB" Height="20" Width="200" HorizontalAlignment="Left" Margin="10 0 0 0" TextChanged="userPhoneNumberTB_TextChanged"></TextBox>
         <Label FontSize="15" FontWeight="Bold" Margin="5 5 0 0" FontFamily="Calibri">Please Enter your Address:</Label>
-        <TextBox x:Name="userAddressTB" Height="20" Width="200" HorizontalAlignment="Left" Margin="10 0 0 0"></TextBox>
+        <TextBox x:Name="userAddressTB" Height="20" Width="200" HorizontalAlignment="Left" Margin="10 0 0 0" TextChanged="userAddressTB_TextChanged"></TextBox>
         <Label FontSize="15" FontWeight="Bold" Margin="5 5 0 0" FontFamily="Calibri">Please choose account type:</Label>
-        <RadioButton Content="Salary Account" Width="150" HorizontalAlignment="Left" Margin="10 5 0 0" IsChecked="True"></RadioButton>
-        <RadioButton Content="Saving Account" Width="150" HorizontalAlignment="Left" Margin="10 5 0 0"></RadioButton>
-        <RadioButton Content="Trading Account" Width="150" HorizontalAlignment="Left" Margin="10 5 0 0"></RadioButton>
+        <RadioButton Content="Salary Account" Width="150" HorizontalAlignment="Left" Margin="10 5 0 0" IsChecked="True" Checked="RadioButton_Checked"></RadioButton>
+        <RadioButton Content="Saving Account" Width="150" HorizontalAlignment="Left" Margin="10 5 0 0" Checked="RadioButton_Checked"></RadioButton>
+        <RadioButton Content="Trading Account" Width="150" HorizontalAlignment="Left" Margin="10 5 0 0" Checked="RadioButton_Checked"></RadioButton>
 
-        <Button Width="100" Height="30" HorizontalAlignment="Left" Margin="10">Proceed</Button>
+        <Button Name="SubmitButton" Width="100" Height="30" HorizontalAlignment="Left" Margin="10" Click="SubmitButton_Click">Submit</Button>
     </StackPanel>
 </UserControl>

@@ -38,12 +38,12 @@ namespace DigitalBankingSystem
 
         private void EditAccountButton_Click(object sender, RoutedEventArgs e)
         {
-
+            DisplayArea.Content = new DeleteEditAcc_UC();
         }
 
         private void DeleteAccountButton_Click(object sender, RoutedEventArgs e)
         {
-
+            DisplayArea.Content = new DeleteEditAcc_UC();
         }
 
         private void ClearAccountsButton_Click(object sender, RoutedEventArgs e)
