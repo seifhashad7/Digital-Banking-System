@@ -5,53 +5,43 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:DigitalBankingSystem"
              mc:Ignorable="d" 
-             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+
              d:DesignHeight="450" d:DesignWidth="800">
-    <StackPanel Background="White">
+    <StackPanel Background="White" Margin="1,0,-1,0">
         <StackPanel.Resources>
-            <FontFamily x:Key="DefaultFontFamilyKey">
-                Calibri
-            </FontFamily>
-            <sys:Double x:Key="DefaultFontSizeKey">
-                15
-            </sys:Double>
-            <FontWeight x:Key="DefaultFontWeightKey">
-                Bold
-            </FontWeight>
-            <Thickness x:Key="DefaultMarginKey">
-                10 0 0 0
-            </Thickness>
-            <Thickness x:Key="SmallerMarginKey">
-                5 0 0 0
-            </Thickness>
-            <sys:Double x:Key="DefaultRBWidth">
-                150
-            </sys:Double>
-            <sys:Double x:Key="DefaultRBHeight">
-                20
-            </sys:Double>
-            <HorizontalAlignment x:Key="DefaultHorAlignmentKey">
-                Left
-            </HorizontalAlignment>
-            <Thickness x:Key="DefaultRBMarginKey">
-                10 5 0 0
-            </Thickness>
+            <Style TargetType="Label">
+                <Setter Property="FontSize" Value="15" />
+                <Setter Property="FontFamily" Value="Calibri" />
+                <Setter Property="FontWeight" Value="Bold" />
+                <Setter Property="Margin" Value="5 0 0 0" />
+            </Style>
+
+            <Style TargetType="TextBox">
+                <Setter Property="HorizontalAlignment" Value="Left" />
+                <Setter Property="Margin" Value="10 0 0 0" />
+            </Style>
+
+            <Style TargetType="RadioButton">
+                <Setter Property="Width" Value="150" />
+                <Setter Property="Height" Value="20" />
+                <Setter Property="Margin" Value="10 5 0 0" />
+                <Setter Property="HorizontalAlignment" Value="Left" />
+            </Style>
         </StackPanel.Resources>
-        
-        <Label FontSize="{DynamicResource DefaultFontSizeKey}" FontWeight="{DynamicResource DefaultFontWeightKey}" Margin="{DynamicResource SmallerMarginKey}" FontFamily="{DynamicResource DefaultFontFamilyKey}">Please Enter your Full Name:</Label>
-        <TextBox x:Name="userNameTB" Height="20" Width="300" HorizontalAlignment="Left" Margin="10 0 0 0" TextChanged="userNameTB_TextChanged"></TextBox>
-        <Label FontSize="{DynamicResource DefaultFontSizeKey}" FontWeight="{DynamicResource DefaultFontWeightKey}" Margin="{DynamicResource SmallerMarginKey}" FontFamily="{DynamicResource DefaultFontFamilyKey}">Please Enter your Age:</Label>
-        <TextBox x:Name="userAgeTB" Height="20" Width="50" HorizontalAlignment="Left" Margin="10 0 0 0" TextChanged="userAgeTB_TextChanged"></TextBox>
-        <Label FontSize="{DynamicResource DefaultFontSizeKey}" FontWeight="{DynamicResource DefaultFontWeightKey}" Margin="{DynamicResource SmallerMarginKey}" FontFamily="{DynamicResource DefaultFontFamilyKey}">Please Enter your National ID:</Label>
-        <TextBox x:Name="userNationalIdTB" Height="20" Width="200" HorizontalAlignment="Left" Margin="10 0 0 0" TextChanged="userNationalIdTB_TextChanged"></TextBox>
-        <Label FontSize="{DynamicResource DefaultFontSizeKey}" FontWeight="{DynamicResource DefaultFontWeightKey}" Margin="{DynamicResource SmallerMarginKey}" FontFamily="{DynamicResource DefaultFontFamilyKey}">Please Enter your Phone Number:</Label>
-        <TextBox x:Name="userPhoneNumberTB" Height="20" Width="200" HorizontalAlignment="Left" Margin="10 0 0 0" TextChanged="userPhoneNumberTB_TextChanged"></TextBox>
-        <Label FontSize="{DynamicResource DefaultFontSizeKey}" FontWeight="{DynamicResource DefaultFontWeightKey}" Margin="{DynamicResource SmallerMarginKey}" FontFamily="{DynamicResource DefaultFontFamilyKey}">Please Enter your Address:</Label>
-        <TextBox x:Name="userAddressTB" Height="20" Width="200" HorizontalAlignment="Left" Margin="10 0 0 0" TextChanged="userAddressTB_TextChanged"></TextBox>
-        <Label FontSize="{DynamicResource DefaultFontSizeKey}" FontWeight="{DynamicResource DefaultFontWeightKey}" Margin="{DynamicResource SmallerMarginKey}" FontFamily="{DynamicResource DefaultFontFamilyKey}">Please choose account type:</Label>
-        <RadioButton Content="Salary Account"  Width="{DynamicResource DefaultRBWidth}" HorizontalAlignment="{DynamicResource DefaultHorAlignmentKey}" Margin="{DynamicResource DefaultRBMarginKey}" IsChecked="True" Checked="RadioButton_Checked"></RadioButton>
-        <RadioButton Content="Saving Account"  Width="{DynamicResource DefaultRBWidth}" HorizontalAlignment="{DynamicResource DefaultHorAlignmentKey}" Margin="{DynamicResource DefaultRBMarginKey}" Checked="RadioButton_Checked"></RadioButton>
-        <RadioButton Content="Trading Account" Width="{DynamicResource DefaultRBWidth}" HorizontalAlignment="{DynamicResource DefaultHorAlignmentKey}" Margin="{DynamicResource DefaultRBMarginKey}" Checked="RadioButton_Checked"></RadioButton>
+        <Label>Please Enter your Full Name:</Label>
+        <TextBox x:Name="userNameTB" Height="20" Width="300" TextChanged="userNameTB_TextChanged" />
+        <Label>Please Enter your Age:</Label>
+        <TextBox x:Name="userAgeTB" Height="20" Width="50" TextChanged="userAgeTB_TextChanged" />
+        <Label>Please Enter your National ID:</Label>
+        <TextBox x:Name="userNationalIdTB" Height="20" Width="200" TextChanged="userNationalIdTB_TextChanged" />
+        <Label>Please Enter your Phone Number:</Label>
+        <TextBox x:Name="userPhoneNumberTB" Height="20" Width="200" TextChanged="userPhoneNumberTB_TextChanged" />
+        <Label>Please Enter your Address:</Label>
+        <TextBox x:Name="userAddressTB" Height="20" Width="200" TextChanged="userAddressTB_TextChanged" />
+        <Label>Please choose account type:</Label>
+        <RadioButton Content="Salary Account" IsChecked="True" Checked="RadioButton_Checked" />
+        <RadioButton Content="Saving Account" Checked="RadioButton_Checked" />
+        <RadioButton Content="Trading Account" Checked="RadioButton_Checked" />
 
         <Button Name="SubmitButton" Width="100" Height="30" HorizontalAlignment="Left" Margin="10" Click="SubmitButton_Click">Submit</Button>
     </StackPanel>
