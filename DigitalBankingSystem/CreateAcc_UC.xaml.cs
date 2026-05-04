@@ -63,11 +63,6 @@ namespace DigitalBankingSystem
             address = userAddressTB.Text;
         }
 
-        private void SaveButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void SubmitButton_Click(object sender, RoutedEventArgs e)
         {
             string connection = "server=localhost;user=deskUser;password=1234;database=banking_system";
@@ -111,6 +106,16 @@ namespace DigitalBankingSystem
             if (sender is RadioButton rb)
             {
                 type = rb.Content.ToString();
+            }
+        }
+
+        private void CancelButton_Click(object sender, RoutedEventArgs e)
+        {
+            var parentWindow = Window.GetWindow(this) as MainWindow;
+
+            if(parentWindow != null)
+            {
+                parentWindow.DisplayArea.Content = new MainUC();
             }
         }
     }

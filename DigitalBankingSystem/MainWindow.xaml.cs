@@ -19,6 +19,7 @@ namespace DigitalBankingSystem
         public MainWindow()
         {
             InitializeComponent();
+            DisplayArea.Content = new MainUC();
         }
 
         private void addEmployee_Click(object sender, RoutedEventArgs e)
@@ -38,7 +39,7 @@ namespace DigitalBankingSystem
 
         private void EditAccountButton_Click(object sender, RoutedEventArgs e)
         {
-            DisplayArea.Content = new DeleteEditAcc_UC();
+            
         }
 
         private void DeleteAccountButton_Click(object sender, RoutedEventArgs e)

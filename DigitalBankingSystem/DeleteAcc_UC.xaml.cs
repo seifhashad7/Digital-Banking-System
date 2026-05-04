@@ -71,5 +71,15 @@ namespace DigitalBankingSystem
                 }
             }
         }
+
+        private void CancelButton_Click(object sender, RoutedEventArgs e)
+        {
+            var parentWindow = Window.GetWindow(this) as MainWindow;
+
+            if(parentWindow != null)
+            {
+                parentWindow.DisplayArea.Content = new MainUC();
+            }
+        }
     }
 }

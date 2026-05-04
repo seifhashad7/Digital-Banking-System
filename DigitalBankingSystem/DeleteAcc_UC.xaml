@@ -9,6 +9,19 @@
     <StackPanel Background="White" HorizontalAlignment="Center" VerticalAlignment="Center">
         <Label FontSize="15" FontWeight="Bold" Margin="5 0 0 0" FontFamily="Calibri">Please Enter your Bank Account Id:</Label>
         <TextBox x:Name="bankAccTB" Height="20" Width="300" HorizontalAlignment="Left" Margin="10 0 0 0" TextChanged="bankAccTB_TextChanged"></TextBox>
-        <Button x:Name="submitButton" Width="100" Margin="10" HorizontalAlignment="Center" Click="submitButton_Click">Submit</Button>
+        <WrapPanel HorizontalAlignment="Center">
+            <WrapPanel.Resources>
+                <Style TargetType="Button">
+                    <Style.Setters>
+                        <Setter Property="Width" Value="100"></Setter>
+                        <Setter Property="Height" Value="30"></Setter>
+                        <Setter Property="Margin" Value="10"></Setter>
+                        <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+                    </Style.Setters>
+                </Style>
+            </WrapPanel.Resources>
+            <Button x:Name="submitButton" Click="submitButton_Click">Submit</Button>
+            <Button x:Name="CancelButton" Click="CancelButton_Click">Cancel</Button>
+        </WrapPanel>
     </StackPanel>
 </UserControl>

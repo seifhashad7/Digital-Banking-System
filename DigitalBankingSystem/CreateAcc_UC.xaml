@@ -43,6 +43,20 @@
         <RadioButton Content="Saving Account" Checked="RadioButton_Checked" />
         <RadioButton Content="Trading Account" Checked="RadioButton_Checked" />
 
-        <Button Name="SubmitButton" Width="100" Height="30" HorizontalAlignment="Left" Margin="10" Click="SubmitButton_Click">Submit</Button>
+        <WrapPanel>
+            <WrapPanel.Resources>
+                <Style TargetType="Button">
+                    <Style.Setters>
+                        <Setter Property="Width" Value="100"></Setter>
+                        <Setter Property="Height" Value="30"></Setter>
+                        <Setter Property="Margin" Value="10"></Setter>
+                        <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+                    </Style.Setters>
+                </Style>
+            </WrapPanel.Resources>
+            <Button Name="SubmitButton" Click="SubmitButton_Click">Submit</Button>
+            <Button Name="CancelButton" Click="CancelButton_Click">Cancel</Button>
+        </WrapPanel>
+        
     </StackPanel>
 </UserControl>
